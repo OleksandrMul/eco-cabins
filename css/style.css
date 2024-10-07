@@ -509,7 +509,16 @@ body::after {
 }
 .main__video {
   display: flex;
-  align-items: center
+  align-items: center;
+  -webkit-transform: translate(0,10%);
+  transform: translate(0,10%);
+  opacity: 0;
+  transition: all .5s ease .3s
+}
+._watcher-view .main__video {
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+  opacity: 1
 }
 .main__video-link {
   display: inline-flex;
@@ -521,19 +530,10 @@ body::after {
   font-size: .875rem;
   font-weight: 500;
   line-height: 1.5;
-  transition: color .3s ease 0s;
-  -webkit-transform: translate(0,10%);
-  transform: translate(0,10%);
-  opacity: 0;
-  transition: all .5s ease .3s
+  transition: color .3s ease 0s
 }
 .main__video-link::before {
   font-size: 2rem
-}
-._watcher-view .main__video-link {
-  -webkit-transform: translate(0,0);
-  transform: translate(0,0);
-  opacity: 1
 }
 .main__image {
   position: absolute;
@@ -591,13 +591,13 @@ body::after {
   transform: translate(0,0);
   opacity: 1
 }
-.materials__link {
+.materials__actions {
   -webkit-transform: translate(0,10%);
   transform: translate(0,10%);
   opacity: 0;
   transition: all .7s ease .3s
 }
-._watcher-view .materials__link {
+._watcher-view .materials__actions {
   -webkit-transform: translate(0,0);
   transform: translate(0,0);
   opacity: 1
