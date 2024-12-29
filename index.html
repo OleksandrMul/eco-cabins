@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
 	<title>EcoCabins</title>
@@ -10,7 +10,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241007215153">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241229144345">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,9 +18,9 @@
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header data-lp data-scroll="55" class="header">
 			<div class="header__container">
-				<div class="header__logo"><img src="img/logo.svg" alt="logo"></div>
+				<a href="#" data-goto-header data-goto=".main" class="header__logo"><img src="img/logo.svg" alt="logo"></a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
@@ -32,37 +32,36 @@
 					</nav>
 				</div>
 				<div class="header__actions">
-					<button type="button" class="header__button button">Contact</button>
+					<button type="button" data-popup="#popup" class="header__button button">Contact</button>
 					<button type="button" class="header__icon icon-menu"><span></span></button>
 				</div>
 			</div>
 		</header>
 
 		<main class="page">
-			<section data-watch="navigator" class="page__main main">
+			<section data-watch="navigator" data-watch-threshold="0.2" class="page__main main">
 				<div class="main__container">
 					<div class="main__content">
 						<div class="main__label">Duurzame tiny huisjes</div>
 						<h1 class="main__title title">Een ecologisch tiny huisje is zoveel mogelijk opgebouwd uit duurzame natuurlijke materialen</h1>
 					</div>
 					<div class="main__video">
-						<a href="#" class="main__video-link _iconplay">
+						<a href="#" data-popup="#video" data-popup-youtube="JueppeaIHVU" class="main__video-link _iconplay">
 							Bekijk de film
 						</a>
 					</div>
-
 				</div>
 				<div class="main__image"><img src="img/main/bg.webp" alt="bg-main-image"></div>
 			</section>
 			<section data-watch="navigator" data-watch-threshold="0.1" class="page__materials materials">
 				<div class="materials__container">
 					<div class="materials__content">
-						<h2 class="materials__title title title_dark">Duurzame materialen</h2>
+						<h2 class="materials__title title title--dark">Duurzame materialen</h2>
 						<div class="materials__text">
 							<p>Alle EcoCabins hebben een hoge isolatiewaarde, worden geproduceerd met indien mogelijk duurzame en/of natuurlijke materialen en hebben als opvallende uiterlijke kenmerk de ‘ronde hoeken’, mogelijk gemaakt door het specifieke materiaalgebruik. De voordelen van bouwen met hout zijn legio: hout is licht, flexibel, isoleert goed en bouwt snel en efficiënt. </p>
 						</div>
 						<div class="materials__actions">
-							<a href="#" class="materials__link button button_bd">Lees meer</a>
+							<a href="#" class="materials__link button button--bd">Lees meer</a>
 						</div>
 					</div>
 					<div class="materials__slider swiper">
@@ -141,12 +140,55 @@
 				</div>
 			</div>
 		</main>
-		<footer class="footer">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="28" height="28" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<h2 class="popup__title">Contact Us</h2>
+						<form action="#" class="popup__form form">
+							<div class="form__line">
+								<input autocomplete="off" data-required="text" type="text" name="form[]" data-error="Error: Input filed don't be empty" placeholder="Name" class="form__input input">
+							</div>
+							<div class="form__line">
+								<input autocomplete="off" data-required="tel" type="tel" name="phone" data-error="Error: Input filed don't be empty" placeholder="Phone number" class="form__input input">
+							</div>
+							<div class="form__line">
+								<button type="submit" class="form__button button"><span>Send</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="video" aria-hidden="true" class="popup popup--video">
+			<div class="popup__wrapper">
+				<div class="popup__content popup__content--video">
+					<button data-close type="button" class="popup__close popup__close--video">
+						<svg width="28" height="28" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div data-youtube-place class="popup__text popup__text--video">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer data-watch data-watch-threshold="0.05" class="footer">
 			<div class="footer__container">
 				<div class="footer__mail">
 					<a href="mailto:info@eco-cabins.com">info@eco-cabins.com</a>
 				</div>
-				<div class="footer__logo"><img src="img/logo.svg" alt="footer-logo"></div>
+				<a href="#" data-goto-header data-goto=".main" class="footer__logo"><img src="img/logo.svg" alt="footer-logo"></a>
 				<ul class="footer__menu menu-footer">
 					<li class="menu-footer__item">
 						<a href="#" class="menu-footer__link">Cookies</a>
@@ -158,7 +200,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241007215153"></script>
+	<script src="js/app.min.js?_v=20241229144345"></script>
 </body>
 
 </html>
